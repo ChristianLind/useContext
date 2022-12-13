@@ -1,0 +1,7 @@
+alt i vores provider, altså alle components der er wrappet ind i + deres children osv
+har alle sammen adgang til den value prop i provideren.
+pass'er value proppen ned igennem lagene uden at skulle gøre det manuelt
+
+
+
+useMemo, kan ikke ændre value medmindre value / setvalue bliver kaldt

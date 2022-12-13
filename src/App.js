@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Index } from "./pages/index";
+import { BrowserRouter as Router, Routes, Link, Route } from "react-router-dom";
+import { Index } from "./pages";
 import { About } from "./pages/about";
 import { UserContext } from "./userContext";
 
@@ -22,11 +22,12 @@ function App() {
             </li>
           </ul>
         </nav>
-
-        <UserContext.Provider value={ value }>
-          <Route path="/" exact component={Index} ></Route>
-          <Route path="/about/" component={About} ></Route>
-        </UserContext.Provider>
+          <UserContext.Provider value={ value }>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about/" element={<About />} />
+            </Routes>
+          </UserContext.Provider>
 
       </div>
     </Router>
